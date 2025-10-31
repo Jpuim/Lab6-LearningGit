@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "Square.h"
 
 void guideMissleTT()
 {
@@ -18,6 +18,14 @@ int main(void) {
 
     guideMissleTT();
     sixSeven();
+
+    Square sq;
+
+    sq.setSide(6.7);
+
+    printf("%lf", sq.getSide());
+
+
 
     return 0;
 }
