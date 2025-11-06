@@ -11,9 +11,7 @@ void sixSeven()
     printf("67676767767676767\n");
 }
 
-
 int main(void) {
-    // Here is a comment to make a change heheheheheh
     printf("Hello World!\n");
 
     guideMissleTT();
@@ -21,11 +19,10 @@ int main(void) {
 
     Square sq;
 
-    sq.setSide(6.7);
+    setSide(&sq, 6.7);
 
-    printf("%lf", sq.getSide());
-
-
+    printf("%lf\n", getSide(&sq));
+    printf("Area = %lf\n", getArea(&sq));
 
     return 0;
 }

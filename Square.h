@@ -3,9 +3,10 @@
 
 typedef struct {
     double m_side;
-
-    void setSide(double side) { m_side = side; }
-    double getArea() { return side * side; }
 } Square;
+
+void setSide(Square* sq, double side);
+double getSide(const Square* sq);
+double getArea(const Square* sq);
 
 #endif
