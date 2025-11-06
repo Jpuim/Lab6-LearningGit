@@ -1,13 +1,19 @@
 CC = gcc
 CFLAGS = -Wall -g
 
+OBJS = hello.o Square.o
+MOBJS = mrcrowley.o Square.o
+
 all: hello mrcrowley
 
-hello: hello.c Square.c Square.h
-	$(CC) $(CFLAGS) hello.c Square.c -o hello
+hello: $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o hello
 
-mrcrowley: mrcrowley.c Square.c Square.h
-	$(CC) $(CFLAGS) mrcrowley.c Square.c -o mrcrowley
+mrcrowley: $(MOBJS)
+	$(CC) $(CFLAGS) $(MOBJS) -o mrcrowley
+
+%.o: %.c Square.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	-$(RM) hello.exe mrcrowley.exe
+	-$(RM) *.o hello.exe mrcrowley.exe
